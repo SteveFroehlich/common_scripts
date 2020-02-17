@@ -11,4 +11,5 @@ to your .bashrc or .bash_profile
 
 ## File descriptions
 `.bash_common.sh` holds common bashrc/bash_profile configs 
+
 `my-scripts/` holds helper scripts for useful tasks
