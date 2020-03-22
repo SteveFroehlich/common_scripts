@@ -4,12 +4,12 @@
 #   ./new-ansible-playbook.sh my-project-name
 #  or
 #   ./new-ansible-playbook.sh 
-# the latter will use the default dir name of ansible
+# the latter will use the default dir name of playbook
 
 if [ -n "$1" ]; then
   projectName=$1
 else
-  projectName="ansible"
+  projectName="playbook"
 fi
 
 ###### create project dir

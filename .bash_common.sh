@@ -1,7 +1,7 @@
 # use .sh extension to get bash highlighting in text editors
 
 # my scripts
-export PATH=$PATH:~/my-scripts/
+export PATH=$PATH:~/common_scripts/my-scripts/
 
 ######### Alias #########
 alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
