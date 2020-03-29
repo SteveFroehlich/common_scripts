@@ -34,6 +34,7 @@ alias nch='git diff --numstat'
 alias gs='git merge --squash '
 alias d='git diff head'
 alias s='git status'
+alias new-gitignore='cp ~/common_scripts/gitignore_template.txt .gitignore'
 
 # bash
 alias edit-bash='open ~/.bashrc'

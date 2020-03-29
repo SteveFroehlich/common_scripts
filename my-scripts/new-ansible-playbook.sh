@@ -32,6 +32,25 @@ task_content="
 echo $task_content >> $projectName/tasks/main.yml
 
 
+###### create files dir
+mkdir $projectName/files/
+
+
+###### create templates dir
+mkdir $projectName/templates/
+
+
+###### create dir for roles
+mkdir $projectName/roles/
+
+
+###### create ansible config
+config_content="
+roles_path = roles/ 
+"
+echo $config_content >> $projectName/ansible.cfg
+
+
 ###### create playbook
 playbook_content="
 - hosts: localhost\n
