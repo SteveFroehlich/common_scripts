@@ -1,7 +1,7 @@
 # use .sh extension to get bash highlighting in text editors
 
 # my scripts
-export PATH=$PATH:~/common_scripts/my-scripts/
+export PATH=$PATH:~/common-scripts/my-scripts/
 
 ######### Alias #########
 alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
@@ -43,7 +43,6 @@ alias edit-common='open ~/common_scripts/.bash_common.sh'
 alias rb='source ~/.bash_profile'  # rb --> reset bash
 alias cd-scripts='cd ~/common_scripts/my-scripts/'
 alias help-scripts='ls ~/common_scripts/my-scripts/'
-alias help-alias='grep alias ~/.bashrc ~/common_scripts/.bash_common.sh'
 
 # maven
 alias mci='mvn clean install'
