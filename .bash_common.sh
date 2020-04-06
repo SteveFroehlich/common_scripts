@@ -45,6 +45,7 @@ alias cd-scripts='cd ~/common_scripts/my-scripts/'
 alias help-scripts='ls ~/common_scripts/my-scripts/'
 
 # maven
+alias mcc='mvn clean compile'
 alias mci='mvn clean install'
 alias mcis='mvn clean install -DskipTests'
 alias mcd='mvn clean deploy'
