@@ -1,7 +1,7 @@
 # use .sh extension to get bash highlighting in text editors
 
 # my scripts
-export PATH=$PATH:~/common-scripts/my-scripts/
+export PATH=$PATH:~/common-scripts/
 
 ######### Alias #########
 alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
@@ -60,5 +60,9 @@ alias tcp-8080='lsof -i :8080'
 
 # html pages and links
 alias radar='open https://radar.weather.gov/ridge/Conus/full_loop.php'
-alias wx='open https://weather.com/weather/tenday/l/bb3a65580eeeed24af39f5db9d1f57695d4b0767bf2fe3c5745e803ee36ed41b'
+alias wx='open https://weather.com/weather/tenday/l/cd584f93846d30b9bf5c8480b555468b3c3f2b7a9e0b6527d851fd7910140297'
+alias ddg='open https://duckduckgo.com/'
+
+# aws
+alias ec2-types='open https://aws.amazon.com/ec2/instance-types/' 
 

@@ -1,6 +1,6 @@
 """
 example:
-    $ python gen_pipenv_cmd_from_requirements.py /path/to/requirements.txt
+    $ python ~/common_scripts/my-scripts/gen_pipenv_cmd_from_requirements.py /path/to/requirements.txt
 
         pipenv install pckg1 pckg2 pckg3
     $_

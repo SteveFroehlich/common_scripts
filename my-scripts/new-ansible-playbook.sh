@@ -46,6 +46,7 @@ mkdir $projectName/roles/
 
 ###### create ansible config
 config_content="
+[defaults]
 roles_path = roles/ 
 "
 echo $config_content >> $projectName/ansible.cfg
