@@ -62,7 +62,10 @@ alias tcp-8080='lsof -i :8080'
 # html pages and links
 alias radar='open https://radar.weather.gov/ridge/Conus/full_loop.php'
 alias wx='open https://weather.com/weather/tenday/l/cd584f93846d30b9bf5c8480b555468b3c3f2b7a9e0b6527d851fd7910140297'
+alias wxh='open https://weather.com/weather/hourbyhour/l/cd584f93846d30b9bf5c8480b555468b3c3f2b7a9e0b6527d851fd7910140297'
 alias clouds='open https://weather.cod.edu/satrad/?parms=local-N_Illinois-02-24-0-100-1&checked=map&colorbar=undefined'
+alias rain='open https://weather.cod.edu/satrad/?parms=local-N_Illinois-comp_radar-24-0-100-1&checked=map&colorbar=undefined'
+alias sun='open https://www.timeanddate.com/sun/usa/chicago'
 alias ddg='open https://duckduckgo.com/'
 
 # aws
