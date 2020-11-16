@@ -35,6 +35,8 @@ alias nch='git diff --numstat'
 alias gs='git merge --squash '
 alias d='git diff head'
 alias s='git status'
+alias sloc-py='git ls-files | grep .py | xargs wc -l'
+alias sloc-j='git ls-files | grep .java | xargs wc -l'
 alias new-gitignore='cp ~/common_scripts/gitignore_template.txt .gitignore'
 
 # bash
