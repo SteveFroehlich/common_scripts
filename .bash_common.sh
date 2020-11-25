@@ -35,6 +35,7 @@ alias nch='git diff --numstat'
 alias gs='git merge --squash '
 alias d='git diff head'
 alias s='git status'
+alias bs='git branch --sort=committerdate'
 alias sloc-py='git ls-files | grep .py | xargs wc -l'
 alias sloc-j='git ls-files | grep .java | xargs wc -l'
 alias new-gitignore='cp ~/common_scripts/gitignore_template.txt .gitignore'
@@ -69,6 +70,7 @@ alias clouds='open https://weather.cod.edu/satrad/?parms=local-N_Illinois-02-24-
 alias rain='open https://weather.cod.edu/satrad/?parms=local-N_Illinois-comp_radar-24-0-100-1&checked=map&colorbar=undefined'
 alias sun='open https://www.timeanddate.com/sun/usa/chicago'
 alias ddg='open https://duckduckgo.com/'
+alias github='open https://github.com/SteveFroehlich'
 
 # aws
 alias ec2-types='open https://aws.amazon.com/ec2/instance-types/' 
