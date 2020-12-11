@@ -71,6 +71,7 @@ alias rain='open https://weather.cod.edu/satrad/?parms=local-N_Illinois-comp_rad
 alias sun='open https://www.timeanddate.com/sun/usa/chicago'
 alias ddg='open https://duckduckgo.com/'
 alias github='open https://github.com/SteveFroehlich'
+alias indie='open https://www.indiehackers.com/'
 alias chrome='open -a "Google Chrome"'
 alias firefox='open -a "Firefox"'
 
