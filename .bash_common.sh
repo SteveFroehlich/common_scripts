@@ -10,6 +10,7 @@ alias n='nano -c'
 #unix
 alias lah='ls -lah'
 alias proc='ps -ef'
+alias tarh='printf "\n  tar:   $ tar -czvf myDir.tar.gz myDir\n  untar: $ tar -xzvf myDir.tar.gz\n\n"'
 
 # git
 alias cb='git checkout'
