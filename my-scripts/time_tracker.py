@@ -25,12 +25,19 @@ def get_time_text():
     return now.strftime("%m/%d/%Y %H:%M:%S")
 
 
+def check_for_file(file_name):
+    if os.path.isfile(file_name):
+        raise Exception("Found unexpected start file. Did you forget to call stop?")
+    pass
+
+
 class TimeTracker:
     # format: start-t, end-t, end-time-human, duration-sec, duration-min
     delim = ","
     start_file_name = "start_wk_time.txt"
 
     def start_clock(self):
+        check_for_file(self.start_file_name)
         start_file = get_time_file(self.start_file_name)
         start = get_curr_time()
         start_file.write(str(start))
