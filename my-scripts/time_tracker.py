@@ -26,7 +26,7 @@ def get_time_text():
 
 
 class TimeTracker:
-    # format: start-t, end-t, start-time-human, duration
+    # format: start-t, end-t, end-time-human, duration-sec, duration-min
     delim = ","
     start_file_name = "start_wk_time.txt"
 
@@ -37,7 +37,12 @@ class TimeTracker:
         start_file.close()
 
     def get_start(self):
-        file = open(self.start_file_name, "r")
+        file = None
+        try:
+            file = open(self.start_file_name, "r")
+        except:
+            print("Error reading start file. Did you call stop before start?") 
+            exit(1)
         start = file.read()
         file.close()
         return start 
@@ -50,8 +55,10 @@ class TimeTracker:
 
         human_t = get_time_text()
         end = get_curr_time()
-        duration = end - int(start) 
-        line = start + self.delim + str(end) + self.delim + human_t + self.delim + str(duration) + "\n"
+        duration_s = end - int(start) 
+        duration_m = int(duration_s / 60)
+        line = start + self.delim + str(end) + self.delim + human_t + self.delim + str(duration_s) + self.delim + str(duration_m) + "\n"
+
         file.write(line)
         file.close()
 
