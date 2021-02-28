@@ -1,8 +1,5 @@
 # use .sh extension to get bash highlighting in text editors
 
-# my scripts
-export PATH=$PATH:~/common-scripts/
-
 ######### Alias #########
 alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
 alias n='nano -c'

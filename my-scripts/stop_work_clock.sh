@@ -1,4 +1,4 @@
 #!/bin/sh
 
-python time_tracker.py stop
+python ~/common_scripts/my-scripts/time_tracker.py stop
 
