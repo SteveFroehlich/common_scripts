@@ -35,6 +35,7 @@ class TimeTracker:
     # format: start-t, end-t, end-time-human, duration-sec, duration-min
     delim = ","
     start_file_name = "start_wk_time.txt"
+    time_track_file_name = "wk_time.csv"
 
     def start_clock(self):
         check_for_file(self.start_file_name)
@@ -55,7 +56,7 @@ class TimeTracker:
         return start 
 
     def stop_clock(self):
-        file = get_time_file("wk_time.csv")
+        file = get_time_file(self.time_track_file_name)
         start = self.get_start()
 
         os.remove(self.start_file_name) 
@@ -70,6 +71,34 @@ class TimeTracker:
         file.close()
 
 
+class TimeAnalyzer:
+    time_track_file_name = "wk_time.csv"
+    delim = ","
+
+    def total_time_minutes(self):
+        file = None
+        try:
+            file = open(self.time_track_file_name, "r")
+        except:
+            print("Error reading time file") 
+            exit(1)
+
+        total_min = 0.0
+        for line in file.readlines():
+            line = line.replace(" ","")
+            if line == "":
+                continue
+
+            content = line.split(self.delim)
+            total_min += float(content[len(content)-1])
+        return total_min
+
+    def print_total_time_hours(self):
+        minutes = self.total_time_minutes()
+        print("total time minutes: " + str(minutes))
+        print("total time hours:   " + str(minutes/60.0))
+
+
 def main():
     if len(sys.argv) != 2:
         print("Expecting one arg: 'start' or 'stop'")
@@ -78,11 +107,13 @@ def main():
     cmd = sys.argv[1]
     tt = TimeTracker()
 
-
     if "start" == cmd:
         tt.start_clock()
     elif "stop" == cmd:
         tt.stop_clock()
+    elif "th" == cmd:
+        ta = TimeAnalyzer()
+        ta.print_total_time_hours()
     else:
         raise Exception("Unkown command: " + cmd + ". Supported commands are 'start' or 'stop'")
 
