@@ -38,6 +38,9 @@ alias sloc-py='git ls-files | grep .py | xargs wc -l'
 alias sloc-j='git ls-files | grep .java | xargs wc -l'
 alias new-gitignore='cp ~/common_scripts/gitignore_template.txt .gitignore'
 
+# grep
+alias cgrep='grep --color=auto'
+
 # bash
 alias edit-bash='open ~/.bashrc'
 alias edit-profile='open ~/.bash_profile'
