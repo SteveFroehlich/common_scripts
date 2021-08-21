@@ -5,6 +5,7 @@ alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
 alias n='nano -c'
 
 #unix
+alias dirs='ls -F | grep "/"'
 alias lah='ls -lah'
 alias proc='ps -ef'
 alias tarh='printf "\n  tar:   $ tar -czvf myDir.tar.gz myDir\n  untar: $ tar -xzvf myDir.tar.gz\n\n"'
