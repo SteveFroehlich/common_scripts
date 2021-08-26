@@ -12,5 +12,5 @@ then
 	search_dir="."
 fi
 
-echo "searching for '$regex' in dir: $search_dir excluding [target,.git,.idea]"
-grep $regex -rin --exclude-dir={target,.git,.idea} $search_dir
+echo "searching for '$regex' in dir: $search_dir excluding [target,build,.git,.idea]"
+grep $regex -rin --exclude-dir={target,build,.git,.idea} $search_dir
