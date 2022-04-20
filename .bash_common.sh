@@ -2,7 +2,7 @@
 
 ######### Alias #########
 alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
-alias n='nano -c'
+alias n='nano '
 
 #unix
 alias dirs='ls -d */'
