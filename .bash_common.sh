@@ -82,3 +82,8 @@ alias firefox='open -a "Firefox"'
 # aws
 alias ec2-types='open https://aws.amazon.com/ec2/instance-types/' 
 
+# manim
+alias mg='open https://github.com/3b1b/manim'
+alias mcg='open https://github.com/ManimCommunity/manim/'
+alias mgreddit='open https://www.reddit.com/r/manim/'
+
