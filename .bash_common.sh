@@ -10,6 +10,10 @@ alias lah='ls -lah'
 alias proc='ps -ef'
 alias tarh='printf "\n  tar:   $ tar -czvf myDir.tar.gz myDir\n  untar: $ tar -xzvf myDir.tar.gz\n\n"'
 
+# docker
+alias dc='docker container '
+alias dim='docker image '
+
 # git
 alias cb='git checkout'
 alias clone='git clone '
@@ -43,6 +47,7 @@ alias new-gitignore='cp ~/common_scripts/gitignore_template.txt .gitignore'
 
 # grep
 alias cgrep='grep --color=auto'
+alias grepi='grep -i '
 
 # bash
 alias edit-bash='open ~/.bashrc'
@@ -68,7 +73,7 @@ alias tcp-8080='lsof -i :8080'
 
 # html pages and links
 alias radar='open https://radar.weather.gov/ridge/Conus/full_loop.php'
-alias wx='open https://weather.com/weather/tenday/l/cd584f93846d30b9bf5c8480b555468b3c3f2b7a9e0b6527d851fd7910140297'
+alias wx='open "https://forecast.weather.gov/MapClick.php?lat=42.0901&lon=-87.9835"'
 alias wxh='open https://weather.com/weather/hourbyhour/l/cd584f93846d30b9bf5c8480b555468b3c3f2b7a9e0b6527d851fd7910140297'
 alias clouds='open https://weather.cod.edu/satrad/?parms=local-N_Illinois-02-24-0-100-1&checked=map&colorbar=undefined'
 alias rain='open https://weather.cod.edu/satrad/?parms=local-N_Illinois-comp_radar-24-0-100-1&checked=map&colorbar=undefined'
