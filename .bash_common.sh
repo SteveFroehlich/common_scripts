@@ -4,6 +4,9 @@
 alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
 alias n='nano '
 
+# ai
+alias chatgpt='open https://chat.openai.com/auth/login'
+
 #unix
 alias dirs='ls -d */'
 alias lah='ls -lah'
