@@ -16,6 +16,7 @@ alias tarh='printf "\n  tar:   $ tar -czvf myDir.tar.gz myDir\n  untar: $ tar -x
 # docker
 alias dc='docker container '
 alias dim='docker image '
+alias compose='docker compose '
 
 # git
 alias cb='git checkout'
