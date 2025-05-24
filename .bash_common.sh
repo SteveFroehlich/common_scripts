@@ -18,6 +18,9 @@ alias dc='docker container '
 alias dim='docker image '
 alias compose='docker compose '
 
+# dev container
+alias dev=devcontainer
+
 # git
 alias cb='git checkout'
 alias clone='git clone '
