@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: environment/Dockerfile
+    image: ahhsweb
+    ports:
+      - "8080:8080"
+    volumes:
+      # assume we want the context of the parent directory
+      - ../:/app
+    environment:
+      # below not used but keeping as a reference
+      - APP_ENV=development
