@@ -10,6 +10,7 @@ alias chatgpt='open https://chat.openai.com/auth/login'
 #unix
 alias dirs='ls -d */'
 alias lah='ls -lah'
+alias lsr='ls -ltr'
 alias proc='ps -ef'
 alias tarh='printf "\n  tar:   $ tar -czvf myDir.tar.gz myDir\n  untar: $ tar -xzvf myDir.tar.gz\n\n"'
 
