@@ -4,7 +4,7 @@ services:
     build:
       context: ../
       dockerfile: environment/Dockerfile
-    image: ahhsweb
+    image: unamedproject
     ports:
       - "8080:8080"
     volumes:

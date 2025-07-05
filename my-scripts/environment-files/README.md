@@ -1,7 +1,7 @@
 # Environment Setup
 
 The Dockerfile that will setup the development environment is
-[here](Dockerfile). There is also a [compose file](compose.yaml) for easier image and container management.
+[here](Dockerfile). The [compose file](compose.yaml) makes for easier image and container management. The compose file also holds the name of the image in the `image: unamedproject` tag. Change `unamedproject` to whatever the project name you want.
 
 
 To build the image run the scrip:
