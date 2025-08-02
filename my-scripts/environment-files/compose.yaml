@@ -1,10 +1,11 @@
 version: '3'
 services:
   app:
+    container_name: unamed-app
     build:
       context: ../
       dockerfile: environment/Dockerfile
-    image: unamedproject
+    image: unamed-img
     ports:
       - "8080:8080"
     volumes:
