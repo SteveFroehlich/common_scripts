@@ -1,7 +1,8 @@
 # use .sh extension to get bash highlighting in text editors
 
 ######### Alias #########
-alias recycle='pushd ~/Desktop/recycle_bin/; rm -r *; popd;'
+
+alias ahhsociety='open https://www.ahhsociety.org/'
 alias n='nano '
 
 # ai
