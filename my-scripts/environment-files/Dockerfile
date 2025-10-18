@@ -1,5 +1,8 @@
-# Use an official Ubuntu image as the base image
+# for python projects
 FROM python:3.12-slim
+
+# use root to install needed packages
+USER root
 
 # Install necessary packages and set up environment
 RUN apt-get update && \
@@ -10,9 +13,9 @@ RUN apt-get update && \
         curl \
         git \
         nano \
-        tree && \
-    # Clean up to reduce image size
-    apt-get clean
+        tree \
+        # Clean up to reduce image size
+        apt-get clean
 
 # make sure pip is there and working
 RUN pip install --no-cache-dir --upgrade pip
@@ -21,13 +24,12 @@ RUN pip install --no-cache-dir --upgrade pip
 EXPOSE 80
 EXPOSE 443
 
+# Set the working directory
+WORKDIR /app
 
 # copy all files in the repo to the container
 COPY . .
 
-
-# Set the working directory
-WORKDIR /app
 
 # Keep the container running while not 
 # binding its life cycle to the java app
