@@ -18,7 +18,7 @@ alias tarh='printf "\n  tar:   $ tar -czvf myDir.tar.gz myDir\n  untar: $ tar -x
 # docker
 alias dc='docker container '
 alias dim='docker image '
-alias compose='docker compose '
+alias compose='docker compose'
 
 # dev container
 alias dev=devcontainer
@@ -87,10 +87,9 @@ alias wxh='open https://weather.com/weather/hourbyhour/l/cd584f93846d30b9bf5c848
 alias clouds='open "https://weather.cod.edu/satrad/?parms=local-N_Illinois-02-24-0-100-1&checked=map&colorbar=undefined"'
 alias rain='open "https://weather.cod.edu/satrad/?parms=local-N_Illinois-comp_radar-24-0-100-1&checked=map&colorbar=undefined"'
 alias sun='open https://www.timeanddate.com/sun/usa/chicago'
-alias ddg='open https://duckduckgo.com/'
+
 alias github='open https://github.com/SteveFroehlich'
 alias ih='open https://www.indiehackers.com/'
-alias chrome='open -a "Google Chrome"'
 alias firefox='open -a "Firefox"'
 
 # aws
