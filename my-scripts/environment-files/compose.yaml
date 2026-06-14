@@ -2,15 +2,27 @@ version: '3'
 services:
   app:
     container_name: unamed-app
+
     build:
       context: ../
       dockerfile: environment/Dockerfile
+
     image: unamed-img
+
     ports:
       - "8080:8080"
+
     volumes:
+      # note for better security only source file directory should be mounted, not the whole parent dir.
+      #   Especially if there is secrets in a local .env file
+      #
       # assume we want the context of the parent directory
       - ../:/app
+
     environment:
       # below not used but keeping as a reference
       - APP_ENV=development
+
+    # uncomment if external network calls are not needed for increased security
+    #network_mode: "none"
+
