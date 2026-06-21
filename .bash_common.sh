@@ -2,8 +2,11 @@
 
 ######### Alias #########
 
-alias ahhsociety='open https://www.ahhsociety.org/'
 alias n='nano '
+alias l='ls -ltr'
+
+# historical society alias
+alias ahhsite='open https://www.ahhsociety.org/'
 
 # ai
 alias chatgpt='open https://chat.openai.com/auth/login'
