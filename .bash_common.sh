@@ -5,6 +5,9 @@
 alias n='nano '
 alias l='ls -ltr'
 
+# AI alias
+alias gai='open "https://www.google.com/ai"'
+
 # historical society alias
 alias ahhsite='open https://www.ahhsociety.org/'
 
