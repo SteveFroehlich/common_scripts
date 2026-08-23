@@ -1,5 +1,9 @@
 # use .sh extension to get bash highlighting in text editors
 
+# steve custom software - mermaid render 
+export PATH="$HOME/common_scripts/mermaid-render/bin:$PATH"
+
+common_scripts/mermaid-render/bin
 ######### Alias #########
 
 alias n='nano '
@@ -15,11 +19,8 @@ alias ahhsite='open https://www.ahhsociety.org/'
 alias chatgpt='open https://chat.openai.com/auth/login'
 
 #unix
-alias dirs='ls -d */'
 alias lah='ls -lah'
-alias lsr='ls -ltr'
 alias proc='ps -ef'
-alias tarh='printf "\n  tar:   $ tar -czvf myDir.tar.gz myDir\n  untar: $ tar -xzvf myDir.tar.gz\n\n"'
 
 # docker
 alias dc='docker container '
@@ -65,20 +66,14 @@ alias cgrep='grep --color=auto'
 alias grepi='grep -i '
 
 # bash
+alias edit-zsh='open ~/.zshrc'
 alias edit-bash='open ~/.bashrc'
 alias edit-profile='open ~/.bash_profile'
 alias edit-common='open ~/common_scripts/.bash_common.sh'
-alias rb='source ~/.bash_profile'  # rb --> reset bash
+alias ss='source ~/.zshrc'  # ss --> source shell
 alias cd-scripts='cd ~/common_scripts/my-scripts/'
 alias help-scripts='ls ~/common_scripts/my-scripts/'
 
-# maven
-alias mcc='mvn clean compile'
-alias mci='mvn clean install'
-alias mcis='mvn clean install -DskipTests'
-alias mcd='mvn clean deploy'
-alias mcds='mvn clean deploy -DskipTests'
-alias mcp='mvn clean package'
 
 # spring boot
 alias sb='mvn spring-boot:run'
