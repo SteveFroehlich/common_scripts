@@ -5,45 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mermaid Viewer</title>
   <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #161b22;
+      --surface-raised: #1c2129;
+      --border: #2d333b;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --error-bg: #3d1f24;
+      --error-text: #ff7b72;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      padding: 1.5rem;
-      font-family: system-ui, -apple-system, sans-serif;
-      background: #f8f9fa;
-      color: #212529;
+      padding: 2rem;
+      min-height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88, 166, 255, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(136, 87, 255, 0.05), transparent);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
     }
+
     header {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
     }
+
     h1 {
-      margin: 0 0 0.25rem;
-      font-size: 1.25rem;
+      margin: 0 0 0.35rem;
+      font-size: 1.125rem;
       font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
     }
+
     #filename {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.875rem;
-      color: #6c757d;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.8125rem;
+      color: var(--accent);
+      opacity: 0.9;
     }
+
+    #layout-hint {
+      margin-top: 0.35rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
     #diagram {
-      background: #fff;
-      border: 1px solid #dee2e6;
-      border-radius: 8px;
-      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
       overflow: auto;
-      min-height: 200px;
+      min-height: 240px;
+      max-width: 100%;
+      box-shadow: var(--shadow);
     }
+
+    #diagram svg {
+      display: block;
+      margin: 0 auto;
+      max-width: none;
+      height: auto;
+    }
+
     #error {
       display: none;
       margin-top: 1rem;
-      padding: 1rem;
-      border-radius: 8px;
-      background: #f8d7da;
-      color: #842029;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 123, 114, 0.3);
+      background: var(--error-bg);
+      color: var(--error-text);
       white-space: pre-wrap;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.875rem;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.8125rem;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -51,6 +99,7 @@
   <header>
     <h1>Mermaid Viewer</h1>
     <div id="filename"></div>
+    <div id="layout-hint"></div>
   </header>
   <div id="diagram"></div>
   <pre id="error"></pre>
@@ -58,13 +107,24 @@
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
 
-    mermaid.initialize({ startOnLoad: false, theme: "default" });
+    mermaid.initialize({ startOnLoad: false, theme: "dark" });
 
     const params = new URLSearchParams(window.location.search);
     const file = params.get("file");
+    const direction = params.get("direction");
     const filenameEl = document.getElementById("filename");
+    const layoutHintEl = document.getElementById("layout-hint");
     const diagramEl = document.getElementById("diagram");
     const errorEl = document.getElementById("error");
+
+    function applyDirection(source, dir) {
+      if (!dir) return source;
+      const normalized = dir.toUpperCase();
+      if (/^(flowchart|graph)\s+(LR|RL|TB|TD|BT)/im.test(source)) {
+        return source.replace(/^(flowchart|graph)\s+(LR|RL|TB|TD|BT)/im, `$1 ${normalized}`);
+      }
+      return `${normalized === "LR" || normalized === "RL" ? "flowchart LR" : "flowchart TD"}\n${source}`;
+    }
 
     function showError(message) {
       errorEl.style.display = "block";
@@ -75,6 +135,9 @@
       showError("Missing ?file= query parameter.\nExample: mermaid-render.html?file=diagram.mmd");
     } else {
       filenameEl.textContent = file;
+      if (direction) {
+        layoutHintEl.textContent = `Layout override: ${direction.toUpperCase()} (vertical scroll)`;
+      }
 
       async function render() {
         errorEl.style.display = "none";
@@ -87,7 +150,8 @@
             throw new Error(`Failed to load ${file}: ${response.status} ${response.statusText}`);
           }
 
-          const source = await response.text();
+          let source = await response.text();
+          source = applyDirection(source, direction);
           const { svg } = await mermaid.render("mermaid-diagram", source);
           diagramEl.innerHTML = svg;
         } catch (err) {
