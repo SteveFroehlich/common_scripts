@@ -3,7 +3,6 @@
 # steve custom software - mermaid render 
 export PATH="$HOME/common_scripts/mermaid-render/bin:$PATH"
 
-common_scripts/mermaid-render/bin
 ######### Alias #########
 
 alias n='nano '
@@ -70,7 +69,6 @@ alias edit-zsh='open ~/.zshrc'
 alias edit-bash='open ~/.bashrc'
 alias edit-profile='open ~/.bash_profile'
 alias edit-common='open ~/common_scripts/.bash_common.sh'
-alias ss='source ~/.zshrc'  # ss --> source shell
 alias cd-scripts='cd ~/common_scripts/my-scripts/'
 alias help-scripts='ls ~/common_scripts/my-scripts/'
 
